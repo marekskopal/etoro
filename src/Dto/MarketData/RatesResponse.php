@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace MarekSkopal\Etoro\Dto\MarketData;
 
-/**
- * @phpstan-import-type RateType from Rate
- */
+/** @phpstan-import-type RateType from Rate */
 readonly class RatesResponse
 {
     /** @param list<Rate> $rates */

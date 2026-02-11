@@ -18,10 +18,7 @@ readonly class MarketData extends EtoroApi
     /** @param array<string, scalar|null> $filters */
     public function search(array $filters = []): InstrumentSearchResponse
     {
-        $response = $this->client->get(
-            path: '/api/v1/market-data/search',
-            queryParams: $filters,
-        );
+        $response = $this->client->get(path: '/api/v1/market-data/search', queryParams: $filters);
 
         return InstrumentSearchResponse::fromJson($response);
     }
@@ -69,11 +66,8 @@ readonly class MarketData extends EtoroApi
      * @param list<int>|null $instrumentTypeIds
      * @return list<InstrumentMetadata>
      */
-    public function instrumentsMetadata(
-        ?array $instrumentIds = null,
-        ?array $exchangeIds = null,
-        ?array $instrumentTypeIds = null,
-    ): array {
+    public function instrumentsMetadata(?array $instrumentIds = null, ?array $exchangeIds = null, ?array $instrumentTypeIds = null,): array
+    {
         /** @var array<string, scalar|null> $queryParams */
         $queryParams = [];
 
@@ -87,10 +81,7 @@ readonly class MarketData extends EtoroApi
             $queryParams['instrumentTypeIds'] = implode(',', $instrumentTypeIds);
         }
 
-        $response = $this->client->get(
-            path: '/api/v1/market-data/instruments/metadata',
-            queryParams: $queryParams,
-        );
+        $response = $this->client->get(path: '/api/v1/market-data/instruments/metadata', queryParams: $queryParams);
 
         return InstrumentMetadata::fromJsonList($response);
     }

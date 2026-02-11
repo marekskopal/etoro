@@ -6,10 +6,8 @@ namespace MarekSkopal\Etoro\Dto\MarketData;
 
 readonly class InstrumentType
 {
-    public function __construct(
-        public int $instrumentTypeId,
-        public string $instrumentTypeDescription,
-    ) {
+    public function __construct(public int $instrumentTypeId, public string $instrumentTypeDescription,)
+    {
     }
 
     /** @return list<InstrumentType> */
@@ -39,9 +37,6 @@ readonly class InstrumentType
      */
     public static function fromArray(array $data): self
     {
-        return new self(
-            instrumentTypeId: $data['instrumentTypeId'],
-            instrumentTypeDescription: $data['instrumentTypeDescription'],
-        );
+        return new self(instrumentTypeId: $data['instrumentTypeId'], instrumentTypeDescription: $data['instrumentTypeDescription']);
     }
 }

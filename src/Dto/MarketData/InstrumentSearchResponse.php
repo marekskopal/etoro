@@ -4,18 +4,12 @@ declare(strict_types=1);
 
 namespace MarekSkopal\Etoro\Dto\MarketData;
 
-/**
- * @phpstan-import-type InstrumentSearchItemType from InstrumentSearchItem
- */
+/** @phpstan-import-type InstrumentSearchItemType from InstrumentSearchItem */
 readonly class InstrumentSearchResponse
 {
     /** @param list<InstrumentSearchItem> $items */
-    public function __construct(
-        public int $page,
-        public int $pageSize,
-        public int $totalItems,
-        public array $items,
-    ) {
+    public function __construct(public int $page, public int $pageSize, public int $totalItems, public array $items,)
+    {
     }
 
     public static function fromJson(string $json): self

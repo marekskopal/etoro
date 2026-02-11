@@ -4,16 +4,12 @@ declare(strict_types=1);
 
 namespace MarekSkopal\Etoro\Dto\MarketData;
 
-/**
- * @phpstan-import-type CandleGroupType from CandleGroup
- */
+/** @phpstan-import-type CandleGroupType from CandleGroup */
 readonly class CandleResponse
 {
     /** @param list<CandleGroup> $candles */
-    public function __construct(
-        public string $interval,
-        public array $candles,
-    ) {
+    public function __construct(public string $interval, public array $candles,)
+    {
     }
 
     public static function fromJson(string $json): self

@@ -13,11 +13,8 @@ namespace MarekSkopal\Etoro\Dto\MarketData;
  */
 readonly class ClosingPrice
 {
-    public function __construct(
-        public int $instrumentId,
-        public float $closingPrice,
-        public string $date,
-    ) {
+    public function __construct(public int $instrumentId, public float $closingPrice, public string $date,)
+    {
     }
 
     /** @return list<ClosingPrice> */
@@ -32,10 +29,6 @@ readonly class ClosingPrice
     /** @param ClosingPriceType $data */
     public static function fromArray(array $data): self
     {
-        return new self(
-            instrumentId: $data['instrumentId'],
-            closingPrice: $data['closingPrice'],
-            date: $data['date'],
-        );
+        return new self(instrumentId: $data['instrumentId'], closingPrice: $data['closingPrice'], date: $data['date']);
     }
 }

@@ -12,18 +12,13 @@ namespace MarekSkopal\Etoro\Dto\Watchlists;
  */
 readonly class WatchlistItem
 {
-    public function __construct(
-        public int $instrumentId,
-        public ?int $rank,
-    ) {
+    public function __construct(public int $instrumentId, public ?int $rank,)
+    {
     }
 
     /** @param WatchlistItemType $data */
     public static function fromArray(array $data): self
     {
-        return new self(
-            instrumentId: $data['instrumentId'],
-            rank: $data['rank'] ?? null,
-        );
+        return new self(instrumentId: $data['instrumentId'], rank: $data['rank'] ?? null);
     }
 }

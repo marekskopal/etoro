@@ -18,10 +18,8 @@ use MarekSkopal\Etoro\Utils\DateTimeUtils;
 
 readonly class Trading extends EtoroApi
 {
-    public function __construct(
-        ClientInterface $client,
-        private Config $config,
-    ) {
+    public function __construct(ClientInterface $client, private Config $config,)
+    {
         parent::__construct($client);
     }
 
