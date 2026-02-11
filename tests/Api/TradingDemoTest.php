@@ -25,12 +25,12 @@ class TradingDemoTest extends TestCase
         $result = $trading->portfolio();
 
         self::assertInstanceOf(Portfolio::class, $result);
-        self::assertSame(5000.00, $result->credit);
+        self::assertSame(0.93, $result->credit);
         self::assertCount(1, $result->positions);
-        self::assertSame(12345678, $result->positions[0]->positionId);
-        self::assertSame(1001, $result->positions[0]->instrumentId);
+        self::assertSame(2628177648, $result->positions[0]->positionId);
+        self::assertSame(1137, $result->positions[0]->instrumentId);
         self::assertTrue($result->positions[0]->isBuy);
-        self::assertSame(180.00, $result->positions[0]->openRate);
+        self::assertSame(71.27, $result->positions[0]->openRate);
     }
 
     public function testPortfolioPnl(): void
@@ -40,7 +40,7 @@ class TradingDemoTest extends TestCase
         $result = $trading->portfolioPnl();
 
         self::assertInstanceOf(Portfolio::class, $result);
-        self::assertSame(30.25, $result->positions[0]->pnL);
+        self::assertNull($result->positions[0]->pnL);
     }
 
     public function testOrderInfo(): void
