@@ -6,10 +6,12 @@ namespace MarekSkopal\Etoro\Api;
 
 use MarekSkopal\Etoro\Dto\MarketData\CandleResponse;
 use MarekSkopal\Etoro\Dto\MarketData\ClosingPrice;
+use MarekSkopal\Etoro\Dto\MarketData\Exchange;
 use MarekSkopal\Etoro\Dto\MarketData\InstrumentMetadata;
 use MarekSkopal\Etoro\Dto\MarketData\InstrumentSearchResponse;
 use MarekSkopal\Etoro\Dto\MarketData\InstrumentType;
 use MarekSkopal\Etoro\Dto\MarketData\RatesResponse;
+use MarekSkopal\Etoro\Dto\MarketData\StocksIndustry;
 use MarekSkopal\Etoro\Enum\CandleIntervalEnum;
 use MarekSkopal\Etoro\Enum\SortDirectionEnum;
 
@@ -106,5 +108,41 @@ readonly class MarketData extends EtoroApi
         );
 
         return ClosingPrice::fromJsonList($response);
+    }
+
+    /**
+     * @param list<int>|null $exchangeIds
+     * @return list<Exchange>
+     */
+    public function exchanges(?array $exchangeIds = null): array
+    {
+        /** @var array<string, scalar|null> $queryParams */
+        $queryParams = [];
+
+        if ($exchangeIds !== null) {
+            $queryParams['exchangeIds'] = implode(',', $exchangeIds);
+        }
+
+        $response = $this->client->get(path: '/api/v1/market-data/exchanges', queryParams: $queryParams);
+
+        return Exchange::fromJsonList($response);
+    }
+
+    /**
+     * @param list<int>|null $stocksIndustryIds
+     * @return list<StocksIndustry>
+     */
+    public function stocksIndustries(?array $stocksIndustryIds = null): array
+    {
+        /** @var array<string, scalar|null> $queryParams */
+        $queryParams = [];
+
+        if ($stocksIndustryIds !== null) {
+            $queryParams['stocksIndustryIds'] = implode(',', $stocksIndustryIds);
+        }
+
+        $response = $this->client->get(path: '/api/v1/market-data/stocks-industries', queryParams: $queryParams);
+
+        return StocksIndustry::fromJsonList($response);
     }
 }

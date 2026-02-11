@@ -1,0 +1,32 @@
+{
+  "discussions": [
+    {
+      "id": "disc-456",
+      "post": {
+        "id": "post-456",
+        "owner": {
+          "id": "user-2",
+          "username": "investor1",
+          "firstName": "Jane",
+          "lastName": "Smith",
+          "isBlocked": false,
+          "isPrivate": false,
+          "countryCode": "GB",
+          "piLevel": null,
+          "roles": ["user"]
+        },
+        "created": "2024-06-02T12:00:00Z",
+        "message": {
+          "text": "My portfolio is up 10% this month!",
+          "languageCode": "en"
+        },
+        "updated": null,
+        "isDeleted": false,
+        "type": "Default",
+        "attachments": null,
+        "isSpam": false,
+        "editStatus": "None"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "CuratedLists": [
+    {
+      "Uuid": "list-abc-123",
+      "Name": "Top Tech Stocks",
+      "Description": "Best performing technology stocks",
+      "ListImageUrl": "https://example.com/tech.jpg",
+      "Items": [
+        {
+          "InstrumentId": 1001
+        },
+        {
+          "InstrumentId": 1002
+        }
+      ]
+    }
+  ]
+}

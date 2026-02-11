@@ -1,0 +1,38 @@
+{
+  "realizedCreditPct": 15.5,
+  "unrealizedCreditPct": 84.5,
+  "positions": [
+    {
+      "positionId": 1001,
+      "openTimestamp": "2024-01-15T10:30:00Z",
+      "openRate": 185.50,
+      "instrumentId": 1001,
+      "isBuy": true,
+      "leverage": 1,
+      "takeProfitRate": 200.00,
+      "stopLossRate": 170.00,
+      "socialTradeId": null,
+      "parentPositionId": null,
+      "investmentPct": 10.0,
+      "netProfit": 5.2,
+      "trailingStopLoss": false
+    }
+  ],
+  "socialTrades": [
+    {
+      "socialTradeId": 5001,
+      "parentUsername": "protrader",
+      "stopLossPercentage": -40.0,
+      "openTimestamp": "2024-02-01T08:00:00Z",
+      "investmentPct": 20.0,
+      "openInvestmentPct": 15.0,
+      "netProfit": 8.5,
+      "openNetProfit": 6.0,
+      "closedNetProfit": 2.5,
+      "realizedPct": 30.0,
+      "unrealizedPct": 70.0,
+      "isClosing": false,
+      "positions": []
+    }
+  ]
+}

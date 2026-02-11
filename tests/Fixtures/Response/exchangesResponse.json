@@ -1,0 +1,12 @@
+{
+  "exchangeInfo": [
+    {
+      "exchangeId": 1,
+      "exchangeDescription": "NASDAQ"
+    },
+    {
+      "exchangeId": 2,
+      "exchangeDescription": "NYSE"
+    }
+  ]
+}

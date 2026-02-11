@@ -1,0 +1,29 @@
+{
+  "Users": [
+    {
+      "gcid": 100,
+      "realCID": 200,
+      "demoCID": 300,
+      "username": "toptrader",
+      "language": 1,
+      "languageIsoCode": "en",
+      "country": 1,
+      "allowDisplayFullName": true,
+      "optOut": false,
+      "isPi": true,
+      "avatars": [
+        {
+          "url": "https://example.com/avatar.jpg",
+          "width": 100,
+          "height": 100,
+          "avatarType": "default"
+        }
+      ],
+      "accountType": 1,
+      "fundType": null,
+      "isVerified": true,
+      "verificationLevel": 3,
+      "accountStatus": 1
+    }
+  ]
+}

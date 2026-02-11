@@ -1,0 +1,39 @@
+{
+  "status": "OK",
+  "totalRows": 1,
+  "items": [
+    {
+      "customerId": 12345,
+      "userName": "toptrader",
+      "fullName": "Top Trader",
+      "hasAvatar": true,
+      "popularInvestor": true,
+      "gain": 25.5,
+      "dailyGain": 1.2,
+      "thisWeekGain": 3.5,
+      "riskScore": 4,
+      "maxDailyRiskScore": 5,
+      "maxMonthlyRiskScore": 6,
+      "copiers": 150,
+      "copiedTrades": 500,
+      "copyTradesPct": 45.0,
+      "copiersGain": 18.3,
+      "trades": 200,
+      "winRatio": 0.72,
+      "dailyDd": -2.5,
+      "weeklyDd": -5.0,
+      "profitableWeeksPct": 68.0,
+      "velocity": 30.0,
+      "exposure": 85.0,
+      "avgPosSize": 5.0,
+      "longPosPct": 75.0,
+      "topTradedInstrumentId": 1001,
+      "topTradedInstrumentPct": 15.0,
+      "totalTradedInstruments": 25,
+      "activeWeeks": 52,
+      "country": "US",
+      "countryId": 1,
+      "verified": true
+    }
+  ]
+}

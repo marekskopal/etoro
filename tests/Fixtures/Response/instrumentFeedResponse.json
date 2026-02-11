@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": "post-123",
+      "owner": {
+        "id": "user-1",
+        "username": "trader1",
+        "firstName": "John",
+        "lastName": "Doe",
+        "isBlocked": false,
+        "isPrivate": false,
+        "countryCode": "US",
+        "piLevel": null,
+        "roles": ["user"]
+      },
+      "created": "2024-06-01T10:00:00Z",
+      "message": {
+        "text": "AAPL looking strong today!",
+        "languageCode": "en"
+      },
+      "updated": "2024-06-01T10:05:00Z",
+      "isDeleted": false,
+      "type": "Default",
+      "attachments": [],
+      "isSpam": false,
+      "editStatus": "None"
+    }
+  ],
+  "pagination": {
+    "total": 1,
+    "hasMore": false
+  }
+}

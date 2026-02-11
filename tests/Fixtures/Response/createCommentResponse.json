@@ -1,0 +1,22 @@
+{
+  "entity": {
+    "id": "comment-123",
+    "owner": {
+      "id": "user-1",
+      "username": "trader1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "isBlocked": false,
+      "isPrivate": false,
+      "countryCode": "US",
+      "piLevel": null,
+      "roles": ["user"]
+    },
+    "message": {
+      "text": "Great analysis!",
+      "languageCode": "en"
+    },
+    "created": "2024-06-03T15:00:00Z"
+  },
+  "repliesCount": 0
+}

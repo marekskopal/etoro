@@ -33,6 +33,8 @@ $response = $etoro->marketData->searchBySymbol('AAPL');
 * GET Instruments metadata         ✅
 * GET Instrument types             ✅
 * GET Closing prices               ✅
+* GET Exchanges                    ✅
+* GET Stocks industries            ✅
 
 ### Trading
 
@@ -50,15 +52,49 @@ $response = $etoro->marketData->searchBySymbol('AAPL');
 
 ### Watchlists
 
-* GET Fetch all watchlists    ✅
-* GET Fetch a watchlist       ✅
-* POST Create watchlist       ✅
-* POST Add items              ✅
-* DELETE Remove items         ✅
-* PUT Rename watchlist        ✅
-* PUT Change rank             ✅
-* PUT Set default             ✅
-* DELETE Delete watchlist     ✅
+* GET Fetch all watchlists                   ✅
+* GET Fetch a watchlist                      ✅
+* POST Create watchlist                      ✅
+* POST Add items                             ✅
+* DELETE Remove items                        ✅
+* PUT Rename watchlist                       ✅
+* PUT Change rank                            ✅
+* PUT Set default                            ✅
+* DELETE Delete watchlist                    ✅
+* GET Public watchlists                      ✅
+* GET Public watchlist                       ✅
+* GET Default watchlist items                ✅
+* POST Create default watchlist with items   ✅
+* POST Create watchlist and set as default   ✅
+* PUT Update items                           ✅
+
+### Feeds
+
+* GET Instrument feed posts     ✅
+* GET User feed posts           ✅
+* POST Create discussion post   ✅
+* POST Create comment on post   ✅
+
+### Users Info
+
+* GET Search users              ✅
+* GET User profiles             ✅
+* GET User live portfolio       ✅
+* GET User trade info           ✅
+* GET User gain                 ✅
+* GET User daily gain           ✅
+
+### PI Data
+
+* GET Copiers public info       ✅
+
+### Curated Lists
+
+* GET Fetch curated lists       ✅
+
+### Market Recommendations
+
+* GET Fetch recommendations     ✅
 
 ## Notice
 This is NOT an official eToro library, and the authors of this library are not affiliated with eToro in any way, shape or form.

@@ -1,0 +1,14 @@
+{
+  "copiers": [
+    {
+      "Gender": "M",
+      "Club": "Gold",
+      "Country": "Germany",
+      "CopyStartedAtCategory": "less than 1 month",
+      "AmountCategory": "1000-5000",
+      "AgeCategory": "30-44",
+      "CopyRealizedEquity_pnl": "1589.2",
+      "AvailableCopyBalance": "55.2"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "StocksIndustries": [
+    {
+      "industryId": 1,
+      "industryName": "Technology"
+    },
+    {
+      "industryId": 2,
+      "industryName": "Healthcare"
+    }
+  ]
+}

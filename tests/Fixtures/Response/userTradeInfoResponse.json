@@ -1,0 +1,12 @@
+{
+  "userName": "toptrader",
+  "fullName": "Top Trader",
+  "gain": 25.5,
+  "riskScore": 4,
+  "copiers": 150,
+  "winRatio": 0.72,
+  "dailyDd": -2.5,
+  "profitableWeeksPct": 68.0,
+  "avgPosSize": 5.0,
+  "aumTier": 2
+}

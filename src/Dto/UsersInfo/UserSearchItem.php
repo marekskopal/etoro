@@ -1,0 +1,122 @@
+<?php
+
+declare(strict_types=1);
+
+namespace MarekSkopal\Etoro\Dto\UsersInfo;
+
+/**
+ * @phpstan-type UserSearchItemType array{
+ *     customerId: int,
+ *     userName: string,
+ *     fullName?: string|null,
+ *     hasAvatar?: bool,
+ *     popularInvestor?: bool,
+ *     gain?: float|null,
+ *     dailyGain?: float|null,
+ *     thisWeekGain?: float|null,
+ *     riskScore?: int|null,
+ *     maxDailyRiskScore?: int|null,
+ *     maxMonthlyRiskScore?: int|null,
+ *     copiers?: int|null,
+ *     copiedTrades?: int|null,
+ *     copyTradesPct?: float|null,
+ *     copiersGain?: float|null,
+ *     trades?: int|null,
+ *     winRatio?: float|null,
+ *     dailyDd?: float|null,
+ *     weeklyDd?: float|null,
+ *     profitableWeeksPct?: float|null,
+ *     velocity?: float|null,
+ *     exposure?: float|null,
+ *     avgPosSize?: float|null,
+ *     longPosPct?: float|null,
+ *     topTradedInstrumentId?: int|null,
+ *     topTradedInstrumentPct?: float|null,
+ *     totalTradedInstruments?: int|null,
+ *     activeWeeks?: int|null,
+ *     firstActivity?: string|null,
+ *     lastActivity?: string|null,
+ *     weeksSinceRegistration?: int|null,
+ *     country?: string|null,
+ *     countryId?: int|null,
+ *     verified?: bool,
+ *     isSocialConnected?: bool,
+ *     isTestAccount?: bool,
+ *     blocked?: bool,
+ * }
+ */
+readonly class UserSearchItem
+{
+    public function __construct(
+        public int $customerId,
+        public string $userName,
+        public ?string $fullName,
+        public bool $hasAvatar,
+        public bool $popularInvestor,
+        public ?float $gain,
+        public ?float $dailyGain,
+        public ?float $thisWeekGain,
+        public ?int $riskScore,
+        public ?int $maxDailyRiskScore,
+        public ?int $maxMonthlyRiskScore,
+        public ?int $copiers,
+        public ?int $copiedTrades,
+        public ?float $copyTradesPct,
+        public ?float $copiersGain,
+        public ?int $trades,
+        public ?float $winRatio,
+        public ?float $dailyDd,
+        public ?float $weeklyDd,
+        public ?float $profitableWeeksPct,
+        public ?float $velocity,
+        public ?float $exposure,
+        public ?float $avgPosSize,
+        public ?float $longPosPct,
+        public ?int $topTradedInstrumentId,
+        public ?float $topTradedInstrumentPct,
+        public ?int $totalTradedInstruments,
+        public ?int $activeWeeks,
+        public ?string $country,
+        public ?int $countryId,
+        public bool $verified,
+    ) {
+    }
+
+    /** @param UserSearchItemType $data */
+    public static function fromArray(array $data): self
+    {
+        return new self(
+            customerId: $data['customerId'],
+            userName: $data['userName'],
+            fullName: $data['fullName'] ?? null,
+            hasAvatar: $data['hasAvatar'] ?? false,
+            popularInvestor: $data['popularInvestor'] ?? false,
+            gain: $data['gain'] ?? null,
+            dailyGain: $data['dailyGain'] ?? null,
+            thisWeekGain: $data['thisWeekGain'] ?? null,
+            riskScore: $data['riskScore'] ?? null,
+            maxDailyRiskScore: $data['maxDailyRiskScore'] ?? null,
+            maxMonthlyRiskScore: $data['maxMonthlyRiskScore'] ?? null,
+            copiers: $data['copiers'] ?? null,
+            copiedTrades: $data['copiedTrades'] ?? null,
+            copyTradesPct: $data['copyTradesPct'] ?? null,
+            copiersGain: $data['copiersGain'] ?? null,
+            trades: $data['trades'] ?? null,
+            winRatio: $data['winRatio'] ?? null,
+            dailyDd: $data['dailyDd'] ?? null,
+            weeklyDd: $data['weeklyDd'] ?? null,
+            profitableWeeksPct: $data['profitableWeeksPct'] ?? null,
+            velocity: $data['velocity'] ?? null,
+            exposure: $data['exposure'] ?? null,
+            avgPosSize: $data['avgPosSize'] ?? null,
+            longPosPct: $data['longPosPct'] ?? null,
+            topTradedInstrumentId: $data['topTradedInstrumentId'] ?? null,
+            topTradedInstrumentPct: $data['topTradedInstrumentPct'] ?? null,
+            totalTradedInstruments: $data['totalTradedInstruments'] ?? null,
+            activeWeeks: $data['activeWeeks'] ?? null,
+            country: $data['country'] ?? null,
+            countryId: $data['countryId'] ?? null,
+            verified: $data['verified'] ?? false,
+        );
+    }
+}

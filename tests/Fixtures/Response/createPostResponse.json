@@ -1,0 +1,25 @@
+{
+  "id": "post-789",
+  "owner": {
+    "id": "user-1",
+    "username": "trader1",
+    "firstName": "John",
+    "lastName": "Doe",
+    "isBlocked": false,
+    "isPrivate": false,
+    "countryCode": "US",
+    "piLevel": null,
+    "roles": ["user"]
+  },
+  "created": "2024-06-03T14:00:00Z",
+  "message": {
+    "text": "Bullish on tech stocks!",
+    "languageCode": "en"
+  },
+  "updated": null,
+  "isDeleted": false,
+  "type": "Default",
+  "attachments": null,
+  "isSpam": false,
+  "editStatus": "None"
+}
