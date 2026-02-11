@@ -1,0 +1,25 @@
+{
+    "instrumentDisplayDatas": [
+        {
+            "instrumentId": 1001,
+            "instrumentDisplayName": "Apple Inc.",
+            "instrumentTypeId": 5,
+            "exchangeId": 1,
+            "symbolFull": "AAPL",
+            "stocksIndustryId": 10,
+            "priceSource": "Nasdaq",
+            "hasExpirationDate": false,
+            "isInternalInstrument": false,
+            "images": [
+                {
+                    "instrumentId": 1001,
+                    "width": 50,
+                    "height": 50,
+                    "uri": "https://etoro-cdn.etorostatic.com/market-avatars/aapl/50x50.png",
+                    "backgroundColor": "#000000",
+                    "textColor": "#FFFFFF"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "token": "abc123",
+    "orderID": 87654321,
+    "cid": 100,
+    "statusID": 2,
+    "orderType": 1,
+    "openActionType": 1,
+    "errorCode": null,
+    "errorMessage": null,
+    "instrumentID": 1001,
+    "amount": 1000.00,
+    "units": 5.55,
+    "requestOccurred": "2024-01-10T14:30:00Z",
+    "positions": [
+        {
+            "positionID": 12345678,
+            "orderType": 1,
+            "occurred": "2024-01-10T14:30:01Z",
+            "rate": 180.00,
+            "units": 5.55,
+            "conversionRate": 1.0,
+            "amount": 1000.00,
+            "isOpen": true
+        }
+    ]
+}

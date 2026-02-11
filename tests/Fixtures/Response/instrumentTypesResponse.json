@@ -1,0 +1,12 @@
+{
+    "instrumentTypes": [
+        {
+            "instrumentTypeId": 5,
+            "instrumentTypeDescription": "Stocks"
+        },
+        {
+            "instrumentTypeId": 6,
+            "instrumentTypeDescription": "ETFs"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "rates": [
+        {
+            "instrumentID": 1001,
+            "ask": 185.60,
+            "bid": 185.40,
+            "lastExecution": 185.50,
+            "conversionRateAsk": 1.0,
+            "conversionRateBid": 1.0,
+            "date": "2024-01-15T10:30:00Z",
+            "priceRateID": 12345
+        }
+    ]
+}

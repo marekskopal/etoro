@@ -1,0 +1,34 @@
+{
+    "clientPortfolio": {
+        "positions": [
+            {
+                "positionId": 12345678,
+                "cid": 100,
+                "openDateTime": "2024-01-10T14:30:00Z",
+                "openRate": 180.00,
+                "instrumentId": 1001,
+                "isBuy": true,
+                "leverage": 1,
+                "takeProfitRate": 200.00,
+                "stopLossRate": 170.00,
+                "amount": 1000.00,
+                "orderId": 87654321,
+                "units": 5.55,
+                "totalFees": 0.00,
+                "initialAmountInDollars": 1000.00,
+                "isTslEnabled": false,
+                "isSettled": true,
+                "initialUnits": 5.55,
+                "pnL": 30.25,
+                "closeRate": null
+            }
+        ],
+        "credit": 5000.00,
+        "mirrors": [],
+        "orders": [],
+        "ordersForOpen": [],
+        "ordersForClose": [],
+        "ordersForCloseMultiple": [],
+        "bonusCredit": 0.00
+    }
+}

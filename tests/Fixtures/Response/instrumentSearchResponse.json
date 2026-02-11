@@ -1,0 +1,27 @@
+{
+    "page": 1,
+    "pageSize": 20,
+    "totalItems": 1,
+    "items": [
+        {
+            "instrumentId": 1001,
+            "displayname": "Apple Inc.",
+            "instrumentTypeID": 5,
+            "instrumentType": "Stocks",
+            "exchangeID": 1,
+            "symbol": "AAPL.NQ",
+            "isOpen": true,
+            "internalSymbolFull": "AAPL",
+            "isDelisted": false,
+            "isCurrentlyTradable": true,
+            "isExchangeOpen": true,
+            "isBuyEnabled": true,
+            "currentRate": 185.50,
+            "dailyPriceChange": 1.25,
+            "weeklyPriceChange": 3.40,
+            "monthlyPriceChange": 5.10,
+            "oneYearPriceChange": 25.30,
+            "logo50x50": "https://etoro-cdn.etorostatic.com/market-avatars/aapl/50x50.png"
+        }
+    ]
+}

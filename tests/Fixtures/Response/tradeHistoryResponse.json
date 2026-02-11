@@ -1,0 +1,23 @@
+[
+    {
+        "netProfit": 50.25,
+        "closeRate": 190.50,
+        "closeTimestamp": "2024-01-15T16:00:00Z",
+        "positionId": 12345678,
+        "instrumentId": 1001,
+        "isBuy": true,
+        "leverage": 1,
+        "openRate": 180.00,
+        "openTimestamp": "2024-01-10T14:30:00Z",
+        "stopLossRate": 170.00,
+        "takeProfitRate": 200.00,
+        "trailingStopLoss": false,
+        "orderId": 87654321,
+        "socialTradeId": null,
+        "parentPositionId": null,
+        "investment": 1000.00,
+        "initialInvestment": 1000.00,
+        "fees": 0.00,
+        "units": 5.55
+    }
+]

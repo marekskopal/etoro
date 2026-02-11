@@ -1,0 +1,15 @@
+parameters:
+    level: 9
+    phpVersion: 80200
+    parallel:
+        processTimeout: 300.0
+    typeAliases:
+        uuid: string
+    paths:
+       - src
+       - tests
+    ignoreErrors:
+       -
+          identifier: staticMethod.alreadyNarrowedType
+          paths:
+              - tests/*

@@ -1,0 +1,18 @@
+[
+    {
+        "watchlistId": "wl-123",
+        "name": "Tech Stocks",
+        "isDefault": true,
+        "rank": 1,
+        "items": [
+            {
+                "instrumentId": 1001,
+                "rank": 1
+            },
+            {
+                "instrumentId": 1002,
+                "rank": 2
+            }
+        ]
+    }
+]

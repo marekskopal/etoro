@@ -1,0 +1,24 @@
+{
+    "interval": "OneDay",
+    "candles": [
+        {
+            "instrumentId": 1001,
+            "rangeOpen": 180.00,
+            "rangeClose": 185.50,
+            "rangeHigh": 186.00,
+            "rangeLow": 179.50,
+            "volume": 50000000.0,
+            "candles": [
+                {
+                    "instrumentID": 1001,
+                    "fromDate": "2024-01-15T00:00:00Z",
+                    "open": 180.00,
+                    "high": 186.00,
+                    "low": 179.50,
+                    "close": 185.50,
+                    "volume": 50000000.0
+                }
+            ]
+        }
+    ]
+}
