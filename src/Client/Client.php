@@ -96,7 +96,7 @@ readonly class Client implements ClientInterface
     private function getContents(ResponseInterface $response): string
     {
         if ($response->getStatusCode() !== 200) {
-            throw ApiException::fromCode($response->getStatusCode());
+            throw ApiException::fromResponse($response);
         }
 
         return $response->getBody()->getContents();
