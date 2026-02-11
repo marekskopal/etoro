@@ -13,6 +13,7 @@ use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
+use Ramsey\Uuid\Uuid;
 
 readonly class Client implements ClientInterface
 {
@@ -114,16 +115,6 @@ readonly class Client implements ClientInterface
 
     private function generateRequestId(): string
     {
-        return sprintf(
-            '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-            random_int(0, 0xffff),
-            random_int(0, 0xffff),
-            random_int(0, 0xffff),
-            random_int(0, 0x0fff) | 0x4000,
-            random_int(0, 0x3fff) | 0x8000,
-            random_int(0, 0xffff),
-            random_int(0, 0xffff),
-            random_int(0, 0xffff),
-        );
+        return (string) Uuid::uuid4();
     }
 }
