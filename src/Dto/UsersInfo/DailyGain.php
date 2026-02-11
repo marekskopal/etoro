@@ -7,9 +7,7 @@ namespace MarekSkopal\Etoro\Dto\UsersInfo;
 /** @phpstan-import-type GainEntryType from GainEntry */
 readonly class DailyGain
 {
-    /**
-     * @param list<GainEntry>|null $entries
-     */
+    /** @param list<GainEntry>|null $entries */
     public function __construct(public ?array $entries, public ?float $gain,)
     {
     }

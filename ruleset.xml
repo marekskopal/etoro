@@ -314,8 +314,8 @@
     <rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName">
         <properties>
             <property name="rootNamespaces" type="array">
-                <element key="src" value="MarekSkopal\Trading212"/>
-                <element key="tests" value="MarekSkopal\Trading212\Tests"/>
+                <element key="src" value="MarekSkopal\Etoro"/>
+                <element key="tests" value="MarekSkopal\Etoro\Tests"/>
             </property>
         </properties>
     </rule>

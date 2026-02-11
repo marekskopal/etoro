@@ -21,9 +21,6 @@ readonly class MarketRecommendationsResponse
          */
         $responseContents = json_decode($json, associative: true);
 
-        return new self(
-            responseType: $responseContents['ResponseType'],
-            recommendations: $responseContents['Recommendations'],
-        );
+        return new self(responseType: $responseContents['ResponseType'], recommendations: $responseContents['Recommendations']);
     }
 }

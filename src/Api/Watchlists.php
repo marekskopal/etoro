@@ -103,10 +103,7 @@ readonly class Watchlists extends EtoroApi
             $queryParams['itemsPerPageForSingle'] = $itemsPerPageForSingle;
         }
 
-        $response = $this->client->get(
-            path: '/api/v1/watchlists/public/' . $userId,
-            queryParams: $queryParams,
-        );
+        $response = $this->client->get(path: '/api/v1/watchlists/public/' . $userId, queryParams: $queryParams);
 
         return PublicWatchlist::fromJsonList($response);
     }
@@ -124,17 +121,12 @@ readonly class Watchlists extends EtoroApi
             $queryParams['itemsPerPage'] = $itemsPerPage;
         }
 
-        $response = $this->client->get(
-            path: '/api/v1/watchlists/public/' . $userId . '/' . $watchlistId,
-            queryParams: $queryParams,
-        );
+        $response = $this->client->get(path: '/api/v1/watchlists/public/' . $userId . '/' . $watchlistId, queryParams: $queryParams);
 
         return PublicWatchlist::fromJson($response);
     }
 
-    /**
-     * @return list<PublicWatchlistItem>
-     */
+    /** @return list<PublicWatchlistItem> */
     public function defaultWatchlistItems(?int $itemsLimit = null, ?int $itemsPerPage = null): array
     {
         /** @var array<string, scalar|null> $queryParams */
@@ -148,10 +140,7 @@ readonly class Watchlists extends EtoroApi
             $queryParams['itemsPerPage'] = $itemsPerPage;
         }
 
-        $response = $this->client->get(
-            path: '/api/v1/watchlists/default-watchlists/items',
-            queryParams: $queryParams,
-        );
+        $response = $this->client->get(path: '/api/v1/watchlists/default-watchlists/items', queryParams: $queryParams);
 
         /** @var list<array{ItemId: int, ItemType: string, ItemRank?: int|null}> $responseContents */
         $responseContents = json_decode($response, associative: true);
@@ -162,9 +151,7 @@ readonly class Watchlists extends EtoroApi
         );
     }
 
-    /**
-     * @param list<array{ItemId: int, ItemType: string, ItemRank?: int}> $items
-     */
+    /** @param list<array{ItemId: int, ItemType: string, ItemRank?: int}> $items */
     public function createDefaultWithItems(array $items): PublicWatchlist
     {
         $response = $this->client->post(
@@ -186,9 +173,7 @@ readonly class Watchlists extends EtoroApi
         return PublicWatchlist::fromJson($response);
     }
 
-    /**
-     * @param list<array{ItemId: int, ItemType: string, ItemRank?: int}> $items
-     */
+    /** @param list<array{ItemId: int, ItemType: string, ItemRank?: int}> $items */
     public function updateItems(string $watchlistId, array $items): void
     {
         $this->client->put(

@@ -36,20 +36,13 @@ readonly class Feeds extends EtoroApi
             $queryParams['reactionsPageSize'] = $reactionsPageSize;
         }
 
-        $response = $this->client->get(
-            path: '/api/v1/feeds/instrument/' . $marketId,
-            queryParams: $queryParams,
-        );
+        $response = $this->client->get(path: '/api/v1/feeds/instrument/' . $marketId, queryParams: $queryParams);
 
         return InstrumentFeedResponse::fromJson($response);
     }
 
-    public function userFeed(
-        string $userId,
-        ?int $take = null,
-        ?int $offset = null,
-        ?int $reactionsPageSize = null,
-    ): UserFeedResponse {
+    public function userFeed(string $userId, ?int $take = null, ?int $offset = null, ?int $reactionsPageSize = null,): UserFeedResponse
+    {
         /** @var array<string, scalar|null> $queryParams */
         $queryParams = [];
 
@@ -65,10 +58,7 @@ readonly class Feeds extends EtoroApi
             $queryParams['reactionsPageSize'] = $reactionsPageSize;
         }
 
-        $response = $this->client->get(
-            path: '/api/v1/feeds/user/' . $userId,
-            queryParams: $queryParams,
-        );
+        $response = $this->client->get(path: '/api/v1/feeds/user/' . $userId, queryParams: $queryParams);
 
         return UserFeedResponse::fromJson($response);
     }

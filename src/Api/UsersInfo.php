@@ -23,10 +23,7 @@ readonly class UsersInfo extends EtoroApi
         /** @var array<string, scalar|null> $queryParams */
         $queryParams = array_merge(['period' => $period->value], $filters);
 
-        $response = $this->client->get(
-            path: '/api/v1/user-info/people/search',
-            queryParams: $queryParams,
-        );
+        $response = $this->client->get(path: '/api/v1/user-info/people/search', queryParams: $queryParams);
 
         return UserSearchResponse::fromJson($response);
     }
@@ -49,10 +46,7 @@ readonly class UsersInfo extends EtoroApi
             $queryParams['cidList'] = implode(',', $cidList);
         }
 
-        $response = $this->client->get(
-            path: '/api/v1/user-info/people',
-            queryParams: $queryParams,
-        );
+        $response = $this->client->get(path: '/api/v1/user-info/people', queryParams: $queryParams);
 
         return UserProfile::fromJsonList($response);
     }
@@ -87,12 +81,8 @@ readonly class UsersInfo extends EtoroApi
         return UserGain::fromJson($response);
     }
 
-    public function dailyGain(
-        string $username,
-        DateTimeImmutable $minDate,
-        DateTimeImmutable $maxDate,
-        DailyGainTypeEnum $type,
-    ): DailyGain {
+    public function dailyGain(string $username, DateTimeImmutable $minDate, DateTimeImmutable $maxDate, DailyGainTypeEnum $type,): DailyGain
+    {
         $response = $this->client->get(
             path: '/api/v1/user-info/people/' . $username . '/daily-gain',
             queryParams: [

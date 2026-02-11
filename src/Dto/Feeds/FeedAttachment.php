@@ -20,10 +20,6 @@ readonly class FeedAttachment
     /** @param FeedAttachmentType $data */
     public static function fromArray(array $data): self
     {
-        return new self(
-            type: $data['type'],
-            url: $data['url'],
-            thumbnailUrl: $data['thumbnailUrl'] ?? null,
-        );
+        return new self(type: $data['type'], url: $data['url'], thumbnailUrl: $data['thumbnailUrl'] ?? null);
     }
 }

@@ -20,10 +20,6 @@ readonly class PublicWatchlistItem
     /** @param PublicWatchlistItemType $data */
     public static function fromArray(array $data): self
     {
-        return new self(
-            itemId: $data['ItemId'],
-            itemType: $data['ItemType'],
-            itemRank: $data['ItemRank'] ?? null,
-        );
+        return new self(itemId: $data['ItemId'], itemType: $data['ItemType'], itemRank: $data['ItemRank'] ?? null);
     }
 }
