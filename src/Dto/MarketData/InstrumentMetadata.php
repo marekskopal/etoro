@@ -7,12 +7,12 @@ namespace MarekSkopal\Etoro\Dto\MarketData;
 /**
  * @phpstan-import-type InstrumentImageType from InstrumentImage
  * @phpstan-type InstrumentMetadataType array{
- *     instrumentId: int,
+ *     instrumentID: int,
  *     instrumentDisplayName: string,
- *     instrumentTypeId: int,
- *     exchangeId: int,
+ *     instrumentTypeID: int,
+ *     exchangeID: int,
  *     symbolFull: string,
- *     stocksIndustryId: int|null,
+ *     stocksIndustryID: int|null,
  *     priceSource: string|null,
  *     hasExpirationDate: bool,
  *     isInternalInstrument: bool,
@@ -23,12 +23,12 @@ readonly class InstrumentMetadata
 {
     /** @param list<InstrumentImage> $images */
     public function __construct(
-        public int $instrumentId,
+        public int $instrumentID,
         public string $instrumentDisplayName,
-        public int $instrumentTypeId,
-        public int $exchangeId,
+        public int $instrumentTypeID,
+        public int $exchangeID,
         public string $symbolFull,
-        public ?int $stocksIndustryId,
+        public ?int $stocksIndustryID,
         public ?string $priceSource,
         public bool $hasExpirationDate,
         public bool $isInternalInstrument,
@@ -56,12 +56,12 @@ readonly class InstrumentMetadata
     public static function fromArray(array $data): self
     {
         return new self(
-            instrumentId: $data['instrumentId'],
+            instrumentID: $data['instrumentID'],
             instrumentDisplayName: $data['instrumentDisplayName'],
-            instrumentTypeId: $data['instrumentTypeId'],
-            exchangeId: $data['exchangeId'],
+            instrumentTypeID: $data['instrumentTypeID'],
+            exchangeID: $data['exchangeID'],
             symbolFull: $data['symbolFull'],
-            stocksIndustryId: $data['stocksIndustryId'] ?? null,
+            stocksIndustryID: $data['stocksIndustryID'] ?? null,
             priceSource: $data['priceSource'] ?? null,
             hasExpirationDate: $data['hasExpirationDate'],
             isInternalInstrument: $data['isInternalInstrument'],

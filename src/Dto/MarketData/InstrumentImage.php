@@ -6,20 +6,20 @@ namespace MarekSkopal\Etoro\Dto\MarketData;
 
 /**
  * @phpstan-type InstrumentImageType array{
- *     instrumentId: int,
- *     width: int,
- *     height: int,
+ *     instrumentID: int,
+ *     width?: float,
+ *     height?: float,
  *     uri: string,
- *     backgroundColor: string|null,
- *     textColor: string|null,
+ *     backgroundColor?: string,
+ *     textColor?: string,
  * }
  */
 readonly class InstrumentImage
 {
     public function __construct(
-        public int $instrumentId,
-        public int $width,
-        public int $height,
+        public int $instrumentID,
+        public ?float $width,
+        public ?float $height,
         public string $uri,
         public ?string $backgroundColor,
         public ?string $textColor,
@@ -30,9 +30,9 @@ readonly class InstrumentImage
     public static function fromArray(array $data): self
     {
         return new self(
-            instrumentId: $data['instrumentId'],
-            width: $data['width'],
-            height: $data['height'],
+            instrumentID: $data['instrumentID'],
+            width: $data['width'] ?? null,
+            height: $data['height'] ?? null,
             uri: $data['uri'],
             backgroundColor: $data['backgroundColor'] ?? null,
             textColor: $data['textColor'] ?? null,

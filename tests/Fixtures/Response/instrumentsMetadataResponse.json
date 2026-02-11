@@ -1,25 +1,53 @@
 {
     "instrumentDisplayDatas": [
         {
-            "instrumentId": 1001,
-            "instrumentDisplayName": "Apple Inc.",
-            "instrumentTypeId": 5,
-            "exchangeId": 1,
-            "symbolFull": "AAPL",
-            "stocksIndustryId": 10,
-            "priceSource": "Nasdaq",
-            "hasExpirationDate": false,
-            "isInternalInstrument": false,
+            "instrumentID": 1137,
+            "instrumentDisplayName": "NVIDIA Corporation",
+            "instrumentTypeID": 5,
+            "exchangeID": 4,
             "images": [
                 {
-                    "instrumentId": 1001,
-                    "width": 50,
-                    "height": 50,
-                    "uri": "https://etoro-cdn.etorostatic.com/market-avatars/aapl/50x50.png",
-                    "backgroundColor": "#000000",
-                    "textColor": "#FFFFFF"
+                    "instrumentID": 1137,
+                    "width": 35.0,
+                    "height": 35.0,
+                    "uri": "https://etoro-cdn.etorostatic.com/market-avatars/nvda/35x35.png"
+                },
+                {
+                    "instrumentID": 1137,
+                    "width": 50.0,
+                    "height": 50.0,
+                    "uri": "https://etoro-cdn.etorostatic.com/market-avatars/nvda/50x50.png"
+                },
+                {
+                    "instrumentID": 1137,
+                    "width": 80.0,
+                    "height": 80.0,
+                    "uri": "https://etoro-cdn.etorostatic.com/market-avatars/nvda/80x80.png"
+                },
+                {
+                    "instrumentID": 1137,
+                    "width": 90.0,
+                    "height": 90.0,
+                    "uri": "https://etoro-cdn.etorostatic.com/market-avatars/nvda/90x90.png"
+                },
+                {
+                    "instrumentID": 1137,
+                    "width": 150.0,
+                    "height": 150.0,
+                    "uri": "https://etoro-cdn.etorostatic.com/market-avatars/nvda/150x150.png"
+                },
+                {
+                    "instrumentID": 1137,
+                    "uri": "https://etoro-cdn.etorostatic.com/market-avatars/1137/1137_76B900_F7F7F7.svg",
+                    "backgroundColor": "#76B900",
+                    "textColor": "#F7F7F7"
                 }
-            ]
+            ],
+            "symbolFull": "NVDA",
+            "stocksIndustryID": 8,
+            "priceSource": "NASDAQ",
+            "hasExpirationDate": false,
+            "isInternalInstrument": false
         }
     ]
 }

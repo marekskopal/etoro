@@ -74,8 +74,8 @@ class MarketDataTest extends TestCase
 
         self::assertCount(1, $result);
         self::assertInstanceOf(InstrumentMetadata::class, $result[0]);
-        self::assertSame(1001, $result[0]->instrumentId);
-        self::assertSame('Apple Inc.', $result[0]->instrumentDisplayName);
+        self::assertSame(1137, $result[0]->instrumentID);
+        self::assertSame('NVIDIA Corporation', $result[0]->instrumentDisplayName);
     }
 
     public function testInstrumentTypes(): void
