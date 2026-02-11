@@ -9,7 +9,8 @@ use MarekSkopal\Etoro\Api\Feeds;
 use MarekSkopal\Etoro\Api\MarketData;
 use MarekSkopal\Etoro\Api\MarketRecommendations;
 use MarekSkopal\Etoro\Api\PiData;
-use MarekSkopal\Etoro\Api\Trading;
+use MarekSkopal\Etoro\Api\TradingDemo;
+use MarekSkopal\Etoro\Api\TradingReal;
 use MarekSkopal\Etoro\Api\UsersInfo;
 use MarekSkopal\Etoro\Api\Watchlists;
 use MarekSkopal\Etoro\Client\Client;
@@ -21,7 +22,9 @@ readonly class Etoro
 
     public MarketData $marketData;
 
-    public Trading $trading;
+    public TradingDemo $tradingDemo;
+
+    public TradingReal $tradingReal;
 
     public Watchlists $watchlists;
 
@@ -40,7 +43,8 @@ readonly class Etoro
         $this->client = new Client($config);
 
         $this->marketData = new MarketData($this->client);
-        $this->trading = new Trading($this->client, $config);
+        $this->tradingDemo = new TradingDemo($this->client);
+        $this->tradingReal = new TradingReal($this->client);
         $this->watchlists = new Watchlists($this->client);
         $this->feeds = new Feeds($this->client);
         $this->usersInfo = new UsersInfo($this->client);
@@ -54,9 +58,14 @@ readonly class Etoro
         return $this->marketData;
     }
 
-    public function getTrading(): Trading
+    public function getTradingDemo(): TradingDemo
     {
-        return $this->trading;
+        return $this->tradingDemo;
+    }
+
+    public function getTradingReal(): TradingReal
+    {
+        return $this->tradingReal;
     }
 
     public function getWatchlists(): Watchlists

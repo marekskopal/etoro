@@ -6,7 +6,7 @@ namespace MarekSkopal\Etoro\Dto\Trading;
 
 use JsonSerializable;
 
-readonly class MarketIfTouchedOrder implements JsonSerializable
+readonly class LimitOrder implements JsonSerializable
 {
     public function __construct(
         public int $instrumentId,

@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace MarekSkopal\Etoro\Api;
 
 use DateTimeImmutable;
-use MarekSkopal\Etoro\Client\ClientInterface;
-use MarekSkopal\Etoro\Config\Config;
 use MarekSkopal\Etoro\Dto\Trading\CloseOrder;
-use MarekSkopal\Etoro\Dto\Trading\MarketIfTouchedOrder;
+use MarekSkopal\Etoro\Dto\Trading\LimitOrder;
 use MarekSkopal\Etoro\Dto\Trading\OpenOrderByAmount;
 use MarekSkopal\Etoro\Dto\Trading\OpenOrderByUnits;
 use MarekSkopal\Etoro\Dto\Trading\OrderInfo;
@@ -16,17 +14,12 @@ use MarekSkopal\Etoro\Dto\Trading\Portfolio;
 use MarekSkopal\Etoro\Dto\Trading\TradeHistory;
 use MarekSkopal\Etoro\Utils\DateTimeUtils;
 
-readonly class Trading extends EtoroApi
+readonly class TradingReal extends EtoroApi
 {
-    public function __construct(ClientInterface $client, private Config $config,)
-    {
-        parent::__construct($client);
-    }
-
     public function openOrderByAmount(OpenOrderByAmount $order): string
     {
         return $this->client->post(
-            path: $this->executionPath('/market-open-orders/by-amount'),
+            path: '/api/v1/trading/execution/market-open-orders/by-amount',
             queryParams: [],
             body: $order,
         );
@@ -35,7 +28,7 @@ readonly class Trading extends EtoroApi
     public function openOrderByUnits(OpenOrderByUnits $order): string
     {
         return $this->client->post(
-            path: $this->executionPath('/market-open-orders/by-units'),
+            path: '/api/v1/trading/execution/market-open-orders/by-units',
             queryParams: [],
             body: $order,
         );
@@ -44,16 +37,16 @@ readonly class Trading extends EtoroApi
     public function closePosition(int $positionId, ?CloseOrder $order = null): string
     {
         return $this->client->post(
-            path: $this->executionPath('/market-close-orders/positions/' . $positionId),
+            path: '/api/v1/trading/execution/market-close-orders/positions/' . $positionId,
             queryParams: [],
             body: $order ?? new CloseOrder(),
         );
     }
 
-    public function placeMarketIfTouchedOrder(MarketIfTouchedOrder $order): string
+    public function placeLimitOrder(LimitOrder $order): string
     {
         return $this->client->post(
-            path: $this->executionPath('/market-if-touched-orders'),
+            path: '/api/v1/trading/execution/limit-orders',
             queryParams: [],
             body: $order,
         );
@@ -62,7 +55,15 @@ readonly class Trading extends EtoroApi
     public function cancelOpenOrder(int $orderId): void
     {
         $this->client->delete(
-            path: $this->executionPath('/market-open-orders/' . $orderId),
+            path: '/api/v1/trading/execution/market-open-orders/' . $orderId,
+            queryParams: [],
+        );
+    }
+
+    public function cancelLimitOrder(int $orderId): void
+    {
+        $this->client->delete(
+            path: '/api/v1/trading/execution/limit-orders/' . $orderId,
             queryParams: [],
         );
     }
@@ -70,15 +71,7 @@ readonly class Trading extends EtoroApi
     public function cancelCloseOrder(int $orderId): void
     {
         $this->client->delete(
-            path: $this->executionPath('/market-close-orders/' . $orderId),
-            queryParams: [],
-        );
-    }
-
-    public function cancelMarketIfTouchedOrder(int $orderId): void
-    {
-        $this->client->delete(
-            path: $this->executionPath('/market-if-touched-orders/' . $orderId),
+            path: '/api/v1/trading/execution/market-close-orders/' . $orderId,
             queryParams: [],
         );
     }
@@ -86,7 +79,7 @@ readonly class Trading extends EtoroApi
     public function portfolio(): Portfolio
     {
         $response = $this->client->get(
-            path: $this->tradingPath('/portfolio'),
+            path: '/api/v1/trading/info/portfolio',
             queryParams: [],
         );
 
@@ -96,7 +89,7 @@ readonly class Trading extends EtoroApi
     public function portfolioPnl(): Portfolio
     {
         $response = $this->client->get(
-            path: $this->tradingPath('/portfolio/pnl'),
+            path: '/api/v1/trading/info/real/pnl',
             queryParams: [],
         );
 
@@ -106,7 +99,7 @@ readonly class Trading extends EtoroApi
     public function orderInfo(int $orderId): OrderInfo
     {
         $response = $this->client->get(
-            path: $this->tradingPath('/orders/' . $orderId),
+            path: '/api/v1/trading/info/real/orders/' . $orderId,
             queryParams: [],
         );
 
@@ -129,23 +122,8 @@ readonly class Trading extends EtoroApi
             $queryParams['pageSize'] = $pageSize;
         }
 
-        $response = $this->client->get(
-            path: $this->tradingPath('/history'),
-            queryParams: $queryParams,
-        );
+        $response = $this->client->get(path: '/api/v1/trading/info/trade/history', queryParams: $queryParams);
 
         return TradeHistory::fromJsonList($response);
-    }
-
-    private function executionPath(string $path): string
-    {
-        $demoSegment = $this->config->demo ? '/demo' : '';
-        return '/api/v1/trading/execution' . $demoSegment . $path;
-    }
-
-    private function tradingPath(string $path): string
-    {
-        $demoSegment = $this->config->demo ? '/demo' : '';
-        return '/api/v1/trading' . $demoSegment . $path;
     }
 }
