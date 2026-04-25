@@ -12,7 +12,7 @@ readonly class CreateCommentRequest implements JsonSerializable
     {
     }
 
-    /** @return array<string, mixed> */
+    /** @return array<string, int|string> */
     public function jsonSerialize(): array
     {
         return [

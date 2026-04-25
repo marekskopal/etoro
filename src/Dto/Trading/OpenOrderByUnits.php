@@ -18,7 +18,7 @@ readonly class OpenOrderByUnits implements JsonSerializable
     ) {
     }
 
-    /** @return array<string, mixed> */
+    /** @return array<string, int|float|bool> */
     public function jsonSerialize(): array
     {
         $data = [
